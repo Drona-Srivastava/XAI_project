@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model checkpoints (optional: keep only final ones)
+rf_baseline.pkl
+rf_smote.pkl
+xgb_baseline.pkl
+xgb_smote.pkl
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Large files (optional if needed)
+fraud.csv
