@@ -21,7 +21,7 @@ model = joblib.load("xgb_model.pkl")
 features = joblib.load("features.pkl")
 
 # ================= LOAD DATA FOR DICE =================
-df = pd.read_csv("fraud.csv")
+df = pd.read_csv("fraud_sample.csv")
 
 df = df.drop(['nameOrig', 'nameDest', 'step', 'isFlaggedFraud'], axis=1, errors='ignore')
 df = pd.get_dummies(df, columns=['type'], drop_first=True)
