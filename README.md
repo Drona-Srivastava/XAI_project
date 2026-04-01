@@ -1,4 +1,4 @@
-# Fraud XAI Monorepo
+# Fraud XAI 
 
 This repository is now structured so frontend and backend can be deployed from the same GitHub repo.
 
