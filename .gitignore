@@ -3,26 +3,64 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.egg-info/
+dist/
+build/
 
 # Virtual environment
 venv/
-.env/
+.venv/
+env/
+ENV/
+
+# Environment variables (keep .env.example)
+.env
+.env.local
+.env.*.local
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Backend model checkpoints (keep only final xgb_model.pkl)
+backend/rf_baseline.pkl
+backend/rf_smote.pkl
+backend/xgb_baseline.pkl
+backend/xgb_smote.pkl
 
 # Jupyter
 .ipynb_checkpoints/
-
-# Model checkpoints (optional: keep only final ones)
-rf_baseline.pkl
-rf_smote.pkl
-xgb_baseline.pkl
-xgb_smote.pkl
-
-# OS files
-.DS_Store
-Thumbs.db
+*.ipynb_checkpoints
 
 # Logs
 *.log
+*.log.*
+logs/
 
-# Large files (optional if needed)
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Misc
+*.zip
+*.tar.gz
+*.rar
+.cache/
+
+# Not needed csv
 fraud.csv
