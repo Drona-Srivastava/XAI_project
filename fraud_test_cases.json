@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "version": "1.1",
+    "description": "Regression and edge-case payloads for /predict and /explain endpoints",
+    "required_fields": [
+      "amount",
+      "oldbalanceOrg",
+      "newbalanceOrig",
+      "oldbalanceDest",
+      "newbalanceDest",
+      "type_TRANSFER",
+      "type_CASH_OUT",
+      "type_DEBIT",
+      "type_PAYMENT"
+    ]
+  },
+  "test_cases": [
+    {
+      "name": "Safe Transaction",
+      "input": {
+        "amount": 1500,
+        "oldbalanceOrg": 5000,
+        "newbalanceOrig": 3500,
+        "oldbalanceDest": 2000,
+        "newbalanceDest": 3500,
+        "type_TRANSFER": 1,
+        "type_CASH_OUT": 0,
+        "type_DEBIT": 0,
+        "type_PAYMENT": 0
+      }
+    },
+    {
+      "name": "Fraud-like Transaction",
+      "input": {
+        "amount": 10000,
+        "oldbalanceOrg": 10000,
+        "newbalanceOrig": 0,
+        "oldbalanceDest": 0,
+        "newbalanceDest": 0,
+        "type_TRANSFER": 0,
+        "type_CASH_OUT": 1,
+        "type_DEBIT": 0,
+        "type_PAYMENT": 0
+      }
+    },
+    {
+      "name": "Edge Case Transaction",
+      "input": {
+        "amount": 8000,
+        "oldbalanceOrg": 10000,
+        "newbalanceOrig": 2000,
+        "oldbalanceDest": 1000,
+        "newbalanceDest": 1000,
+        "type_TRANSFER": 1,
+        "type_CASH_OUT": 0,
+        "type_DEBIT": 0,
+        "type_PAYMENT": 0
+      }
+    },
+    {
+      "name": "Strong Fraud Case",
+      "input": {
+        "amount": 20000,
+        "oldbalanceOrg": 20000,
+        "newbalanceOrig": 0,
+        "oldbalanceDest": 0,
+        "newbalanceDest": 100,
+        "type_TRANSFER": 0,
+        "type_CASH_OUT": 1,
+        "type_DEBIT": 0,
+        "type_PAYMENT": 0
+      }
+    },
+    {
+      "name": "Micro Payment Transaction",
+      "input": {
+        "amount": 12,
+        "oldbalanceOrg": 450,
+        "newbalanceOrig": 438,
+        "oldbalanceDest": 1200,
+        "newbalanceDest": 1212,
+        "type_TRANSFER": 0,
+        "type_CASH_OUT": 0,
+        "type_DEBIT": 0,
+        "type_PAYMENT": 1
+      }
+    },
+    {
+      "name": "Debit Transaction Balanced",
+      "input": {
+        "amount": 250,
+        "oldbalanceOrg": 3000,
+        "newbalanceOrig": 2750,
+        "oldbalanceDest": 780,
+        "newbalanceDest": 1030,
+        "type_TRANSFER": 0,
+        "type_CASH_OUT": 0,
+        "type_DEBIT": 1,
+        "type_PAYMENT": 0
+      }
+    },
+    {
+      "name": "Cash Out Partial Drain",
+      "input": {
+        "amount": 7000,
+        "oldbalanceOrg": 12000,
+        "newbalanceOrig": 5000,
+        "oldbalanceDest": 1500,
+        "newbalanceDest": 1500,
+        "type_TRANSFER": 0,
+        "type_CASH_OUT": 1,
+        "type_DEBIT": 0,
+        "type_PAYMENT": 0
+      }
+    },
+    {
+      "name": "High Amount Transfer",
+      "input": {
+        "amount": 95000,
+        "oldbalanceOrg": 95000,
+        "newbalanceOrig": 0,
+        "oldbalanceDest": 2400,
+        "newbalanceDest": 97400,
+        "type_TRANSFER": 1,
+        "type_CASH_OUT": 0,
+        "type_DEBIT": 0,
+        "type_PAYMENT": 0
+      }
+    },
+    {
+      "name": "All Zeros Input",
+      "input": {
+        "amount": 0,
+        "oldbalanceOrg": 0,
+        "newbalanceOrig": 0,
+        "oldbalanceDest": 0,
+        "newbalanceDest": 0,
+        "type_TRANSFER": 0,
+        "type_CASH_OUT": 0,
+        "type_DEBIT": 0,
+        "type_PAYMENT": 0
+      }
+    },
+    {
+      "name": "Sparse Input Missing Type Flags",
+      "input": {
+        "amount": 5000,
+        "oldbalanceOrg": 9000,
+        "newbalanceOrig": 4000,
+        "oldbalanceDest": 12000,
+        "newbalanceDest": 17000
+      }
+    }
+  ]
+}

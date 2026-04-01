@@ -6,7 +6,7 @@ Frontend for the Fraud Detection and Explainable AI system.
 
 Default backend base URL:
 
-`http://localhost:8000`
+`https://xai-project-bla9.onrender.com`
 
 Endpoints used:
 
@@ -33,11 +33,16 @@ You can override the API base URL with:
 
 Example `.env` file:
 
+`VITE_API_BASE_URL=https://xai-project-bla9.onrender.com`
+
+Local development (if backend is running locally) can use:
+
 `VITE_API_BASE_URL=http://localhost:8000`
 
-When you deploy, set it back to your hosted backend URL, for example:
+## Live Deployment
 
-`VITE_API_BASE_URL=https://fraud-xai-api.onrender.com`
+- Frontend: `https://xai-project.vercel.app/`
+- Backend API: `https://xai-project-bla9.onrender.com/`
 
 ## Run
 
