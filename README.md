@@ -21,8 +21,8 @@ uvicorn api:app --reload --host localhost --port 8000
 
 **Access the API:**
 
-- Interactive docs: http://localhost:8000/docs
-- API base: http://localhost:8000
+- Interactive docs: https://xai-project-bla9.onrender.com/docs
+- API base: https://xai-project-bla9.onrender.com
 
 ### 2) Run frontend
 
